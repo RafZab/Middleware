@@ -31,7 +31,7 @@ namespace Middleware.Middleware
         /// <returns> If browser is supported return true if not return false. </returns>
         private bool ChcekTheBrowserSupported(string browser)
         {
-            if (browser == "InternetExplorer" || browser == "Edge" || browser == "EdgeChromium")
+            if (browser == BrowserNames.InternetExplorer || browser == BrowserNames.Edge || browser == BrowserNames.EdgeChromium)
                 return false;
             return true;
         }
