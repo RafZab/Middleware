@@ -45,7 +45,7 @@ namespace Middleware
 
             app.UseHttpsRedirection();
 
-            app.UseMiddleware<MiddlewareCheckBrowser>();
+            app.UseMiddlewareCheckBrowser();
 
             app.UseStaticFiles();
 

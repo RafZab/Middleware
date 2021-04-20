@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Shyjus.BrowserDetection;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,14 @@ namespace Middleware.Middleware
             if (browser == BrowserNames.InternetExplorer || browser == BrowserNames.Edge || browser == BrowserNames.EdgeChromium)
                 return false;
             return true;
+        }
+    }
+
+    public static class MiddlewareCheckBrowserExtetions
+    {
+        public static IApplicationBuilder UseMiddlewareCheckBrowser(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<MiddlewareCheckBrowser>();
         }
     }
 }
