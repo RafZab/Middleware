@@ -20,6 +20,7 @@ namespace Middleware.Middleware
             var browser = _browserDetector.Browser;
             if (!ChcekTheBrowserSupported(browser.Name))
             {
+                var n = context.Request.Headers["User-Agent"];
                 await context.Response.WriteAsync("Browser not supported");
             }
             await next.Invoke(context);
